@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" viewName="{limsBatchID}">
+	<HBox width="100%" id="wrapperLims" alignItems="Center" alignContent="SpaceBetween">
+		<items>
+			<core:Icon src="{path:'dispositionCode', formatter:'.dispositionIconFormatter'}" size="1em" id="icon0" color="{path:'dispositionCode', formatter:'.dispositionColorFormatter'}"/>
+			<Link xmlns="sap.m" href="https://globallimsvalidation.corp.novocorp.net/labvantage/rc?command=page&amp;page=LV_TReleaseBatchMnt&amp;keyid1={limsBatchID}" text="{dispositionCode}" id="link0" subtle="true" textAlign="Right" class="sapUiTinyMargin" target="_blank"/>
+		</items>
+	</HBox>
+</core:FragmentDefinition>

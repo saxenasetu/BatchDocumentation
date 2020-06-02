@@ -1,0 +1,184 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.novonordisk.ibr.BatchDocumentation",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"ZBPM_BSA_SRV": {
+				"uri": "/here/goes/your/serviceurl/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"businessRules": {
+				"uri": "dest/RulesRuntime/rest/v2/workingset-rule-services",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"bpmworkflowruntime": {
+				"uri": "/your/path/here",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"cpi": {
+				"uri": "/your/path/here",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"default": {
+				"uri": "/CloudApp/batch/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "batch",
+					"action": "batchDocumentation",
+					"title": "{{appTitle}}",
+					"icon": "sap-icon://product"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.novonordisk.ibr.BatchDocumentation.view.Main",
+			"type": "XML",
+			"async": true,
+			"id": "Main"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.novonordisk.ibr.BatchDocumentation.i18n.i18n"
+				}
+			},
+			"businessRules": {
+				"dataSource": "businessRules"
+			},
+			"bpmworkflowruntime": {
+				"dataSource": "bpmworkflowruntime"
+			},
+			"cpi": {
+				"dataSource": "cpi"
+			},
+			"": {
+				"dataSource": "default",
+				"preload": true,
+				"settings": {
+					"autoExpandSelect": true,
+					"operationMode": "Server",
+					"synchronizationMode": "None",
+					"groupId": "$auto"
+				}
+			},
+			"ecc": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZBPM_BSA_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.novonordisk.ibr.BatchDocumentation.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [{
+				"name": "SingleBatchOverview",
+				"pattern": "",
+				"target": ["SingleBatchOverview"]
+			}, {
+				"name": "BatchDocumentation",
+				"pattern": "BatchDocumentation/{plant}/{materialNumber}/{batchNumber}",
+				"target": ["BatchDocumentation"]
+			}],
+			"targets": {
+				"SingleBatchOverview": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "SingleBatchOverview",
+					"viewLevel": 1
+				},
+				"BatchDocumentation": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Main",
+					"viewLevel": 2
+				}
+			}
+		}
+	}
+}

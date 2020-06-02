@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<VBox xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" width="100%" direction="Column" id="vbox4">
+		<items>
+			<List noDataText="Drop list items here" id="list3">
+				<items>
+					<StandardListItem title="DV646765" description="Minor. Open" id="item8" infoState="Error" titleTextDirection="RTL" info="New"/>
+					<StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" title="DV646972" description="Major" id="item15"
+						infoState="Success" titleTextDirection="RTL" info="Released"/>
+					<StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" title="DV525604" description="Major" id="item14"
+						infoState="Warning" titleTextDirection="RTL" info="Released with limitations"/>
+				</items>
+			</List>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

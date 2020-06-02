@@ -1,0 +1,68 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap" xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	controllerName="com.novonordisk.ibr.BatchDocumentation.controller.Main"
+	displayBlock="true">
+	<m:Shell id="shell">
+		<m:App id="app" autoFocus="false">
+			<m:pages>
+				<m:Page id="batchStatusAssignmentPage" title="{i18n>title}">
+					<ObjectPageLayout showTitleInHeaderContent="false">
+						<headerTitle>
+							<ObjectPageHeader objectTitle="Batch {batchNumber}" isObjectTitleAlwaysVisible="true"></ObjectPageHeader>
+						</headerTitle>
+						<headerContent>
+							<core:Fragment
+								fragmentName="com.novonordisk.ibr.BatchDocumentation.view.BatchAssignmentParts.HeaderContent"
+								type="XML"/>
+						</headerContent>
+						<ObjectPageSection title="STATUS OVERVIEW">
+							<subSections>
+								<ObjectPageSubSection title="Status Overview">
+									<core:Fragment
+										fragmentName="com.novonordisk.ibr.BatchDocumentation.view.BatchAssignmentParts.StatusOverviewBlock"
+										type="XML"/>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+						<ObjectPageSection>
+							<subSections>
+								<ObjectPageSubSection title="LIMS DISPOSITION CODE">
+									<core:Fragment
+										fragmentName="com.novonordisk.ibr.BatchDocumentation.view.BatchAssignmentParts.LimsDispositionCodeBlock"
+										type="XML"/>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+						<ObjectPageSection>
+							<subSections>
+								<ObjectPageSubSection title="UTILITY SAMPLES">
+									<core:Fragment
+										fragmentName="com.novonordisk.ibr.BatchDocumentation.view.BatchAssignmentParts.UtilitySampleBlock"
+										type="XML"/>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+						<ObjectPageSection>
+							<subSections>
+								<ObjectPageSubSection title="TANKER DELIVERIES">
+									<core:Fragment
+										fragmentName="com.novonordisk.ibr.BatchDocumentation.view.BatchAssignmentParts.TankerDeliveries"
+										type="XML"/>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+						<ObjectPageSection>
+							<subSections>
+								<ObjectPageSubSection title="DEVIATIONS">
+									<core:Fragment
+										fragmentName="com.novonordisk.ibr.BatchDocumentation.view.BatchAssignmentParts.DeviationsBlock"
+										type="XML"/>
+								</ObjectPageSubSection>
+							</subSections>
+						</ObjectPageSection>
+					</ObjectPageLayout>
+				</m:Page>
+			</m:pages>
+		</m:App>
+	</m:Shell>
+</mvc:View>

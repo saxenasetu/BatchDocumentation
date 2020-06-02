@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+<HBox width="100%" id="hbox0" height="200px">
+    <items>
+        <VBox width="100%" direction="Column" id="vbox0" alignItems="Start" justifyContent="SpaceBetween">
+            <items>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="SAP Batch Status" icon="sap-icon://accept" state="Success" id="status11"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Batch Report" icon="sap-icon://accept" state="Warning" id="status12"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Solvents" icon="sap-icon://accept" state="Success" id="status13"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Batch Samples" icon="sap-icon://message-error" state="Error" id="status13_copy"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Critical Logbook" icon="sap-icon://accept" state="Success" id="status13_copy2"/>
+            </items>
+        </VBox>
+        <VBox width="100%" direction="Column" id="vbox1" justifyContent="SpaceBetween">
+            <items>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Water Samples" icon="sap-icon://accept" state="Success" id="status14"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Regenerated Ethanol" icon="sap-icon://message-error" state="Success" id="status15"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Tanker Deliveries" icon="sap-icon://message-error" state="Error" id="status16"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Change Requests" icon="sap-icon://accept" state="Success" id="status16_copy"/>
+                <ObjectStatus xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" text="TODO" title="Batch rel. Deviations" icon="sap-icon://accept" state="Warning" id="status16_copy2"/>
+            </items>
+        </VBox>
+    </items>
+</HBox>
+</core:FragmentDefinition>

@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<VBox width="100%" direction="Column" id="vbox2">
+		<items>
+			<List noDataText="Drop list items here" id="list2">
+				<items>
+					<StandardListItem title="Regenerated Ethanol" description="Week 31 - Week 32" id="item9" infoState="Success" titleTextDirection="RTL"
+						info="Reviewed"/>
+					<StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" title="Purified Water"
+						description="Week 29 - Week 33" id="item13" infoState="Success" titleTextDirection="RTL" info="Reviewed"/>
+				</items>
+			</List>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

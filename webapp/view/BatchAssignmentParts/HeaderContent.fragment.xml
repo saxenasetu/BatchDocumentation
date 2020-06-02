@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<l:HorizontalLayout>
+		<l:content>
+			<HBox alignItems="Start" width="100%" alignContent="Start" justifyContent="SpaceBetween">
+				<items>
+					<l:VerticalLayout class="sapUiLargeMarginEnd">
+						<ObjectStatus text="{materialNumber}" title="Item No."/>
+						<ObjectStatus text="{materialDescription}" title="Item Name"/>
+						<l:content>
+							<ObjectStatus text="{plant}" title="Plant"/>
+						<ObjectStatus text="{dateOfManufacture}" title="Date of Manufacture" class="sapUiSmallMarginTop"/>
+						</l:content>
+					</l:VerticalLayout>
+					<l:VerticalLayout>
+						<l:content>
+							<l:VerticalLayout>
+								<l:content>
+									<ObjectStatus text="" state="Success" title="Batch Summary Status"/>
+									<ObjectStatus text="{batchStatus}" state="Success" title="SAP Batch Status"/>
+								</l:content>
+							</l:VerticalLayout>
+							<ObjectStatus text="{mappedData>/site}" title="Site" class="sapUiTinyMarginTop"/>
+							<ObjectStatus text="{mappedData>/building}" title="Building"/>
+						</l:content>
+					</l:VerticalLayout>
+				</items>
+			</HBox>
+		</l:content>
+	</l:HorizontalLayout>
+</core:FragmentDefinition>

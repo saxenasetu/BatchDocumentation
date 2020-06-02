@@ -1,0 +1,43 @@
+{
+	"welcomeFile": "/index.html",
+	"authenticationMethod": "route",
+	"logout": {
+		"logoutEndpoint": "/do/logout"
+	},
+	"routes": [{
+		"source": "^/bpmworkflowruntime/(.*)$",
+		"target": "/$1",
+		"service": "com.sap.bpm.workflow",
+		"endpoint": "workflow_rest_url",
+		"authenticationType": "xsuaa"
+	}, {
+		"source": "^/CloudApp/(.*)$",
+		"target": "$1",
+		"destination": "CloudApp",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa"
+	}, {
+		"source": "^/cpi/(.*)$",
+		"target": "$1",
+		"destination": "cpi",
+		"csrfProtection": false,
+		"authenticationType": "none"
+	}, {
+		"source": "^/dest/globalLIMSenv/(.*)$",
+		"target": "$1",
+		"destination": "globalLIMSenv",
+		"csrfProtection": false,
+		"authenticationType": "none"
+	}, {
+		"source": "^/dest/RulesRuntime/(.*)$",
+		"target": "$1",
+		"destination": "RulesRuntime",
+		"csrfProtection": false,
+		"authenticationType": "none"
+	}, {
+		"source": "^(.*)$",
+		"target": "$1",
+		"service": "html5-apps-repo-rt",
+		"authenticationType": "xsuaa"
+	}]
+}

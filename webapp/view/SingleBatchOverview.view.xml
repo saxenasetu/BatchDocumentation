@@ -1,0 +1,70 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:fb="sap.ui.comp.filterbar" xmlns:f="sap.f" controllerName="com.novonordisk.ibr.BatchDocumentation.controller.SingleBatchOverview">
+	<App id="app" autoFocus="false">
+		<pages>
+			<f:DynamicPage id="SingleBatchOverview">
+				<f:title>
+					<f:DynamicPageTitle>
+						<f:heading>
+							<Title text="Batches to Be Reviewed"/>
+						</f:heading>
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:header>
+					<f:DynamicPageHeader pinnable="true">
+						<f:content>
+							<fb:FilterBar id="filterbar" search="searchTable" useToolbar="false" showGoOnFB="false" showFilterConfiguration="false">
+								<fb:filterGroupItems>
+									<fb:FilterGroupItem groupName="frontpage" name="batchFilter" label="Batch" partOfCurrentVariant="true" visibleInFilterBar="true">
+										<fb:control>
+											<SearchField placeholder="Search for ..." id="batchSearchField" search="searchTable"/>	
+										</fb:control>
+									</fb:FilterGroupItem>								
+									<fb:FilterGroupItem groupName="frontpage" name="plantFilter" label="Plant" partOfCurrentVariant="true" visibleInFilterBar="true">
+										<fb:control>
+											<MultiInput id="plantMultiIn" showValueHelp="false" tokenUpdate="onTokenUpdate">
+											</MultiInput>
+										</fb:control>
+									</fb:FilterGroupItem>
+									<fb:FilterGroupItem groupName="frontpage" name="buildingFilter" label="Building" partOfCurrentVariant="true" visibleInFilterBar="true">
+										<fb:control>
+											<MultiInput id="buildingMultiIn" showValueHelp="false" tokenUpdate="onTokenUpdate">
+											</MultiInput>
+										</fb:control>
+									</fb:FilterGroupItem>
+								</fb:filterGroupItems>
+							</fb:FilterBar>	
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>	
+				<f:content>
+		    		<Table noDataText="No data" id="sboTable" items="{path:'/Batches', sorter:{path:'dateOfManufacture'} }" growing="true" growingThreshold="10" growingTriggerText="Load More">
+				        <columns>
+							<Column>
+			                        <Label text="Batch No."/>
+			                </Column>
+			                <Column>
+		                        <Label text="Item No."/>
+			                </Column>
+			                <Column>
+		                        <Label text="Item Name"/>
+			                </Column>
+			                <Column>
+			                    <Label text="Date of Manufacture"/>
+			                </Column>
+		            	</columns>
+		            	<items>
+		                	<ColumnListItem id="sboColumns" press="navigateToDetails" tooltip="{=${batchStatus}.toLowerCase().startsWith('manual handling') ? 'Insufficent Data' : ''}" type="Inactive">
+		                    	<cells>
+			                        <Text text="{batchNumber}" id="batchNumber"/>
+			                        <Text text="{materialNumber}" id="materialNumber"/>
+			                        <Text text="{materialDescription}" id="materialDescription"/>
+			                        <Text text="{path: 'dateOfManufacture', targetType: 'any', format: '.commonFormatter.formatDate'}" id="dateOfManufacture"/>
+			                    </cells>
+			                </ColumnListItem>
+						</items>
+		            </Table>
+				</f:content>
+			</f:DynamicPage>
+		</pages>
+	</App>
+</mvc:View>
