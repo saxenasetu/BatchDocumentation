@@ -3,7 +3,7 @@
   "description": "",
   "devDependencies": {
     "@sap/grunt-sapui5-bestpractice-build": "1.4.1",
-    "@sap/grunt-sapui5-bestpractice-test": "2.0.1",
+    "@sap/grunt-sapui5-bestpractice-test": "2.0.4",
     "grunt": "^1.1.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-nodeunit": "^2.1.0",
